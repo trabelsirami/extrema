@@ -1,0 +1,88 @@
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Hotel index{% endblock %}#}
+
+{#{% block body %}#}
+{#    <h1>Hotel index</h1>#}
+
+{#    <table class="table">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Id</th>#}
+{#                <th>Nom</th>#}
+{#                <th>Description</th>#}
+{#                <th>Location</th>#}
+{#                <th>Image</th>#}
+{#                <th>actions</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for hotel in hotels %}#}
+{#            <tr>#}
+{#                <td>{{ hotel.id }}</td>#}
+{#                <td>{{ hotel.nom }}</td>#}
+{#                <td>{{ hotel.description }}</td>#}
+{#                <td>{{ hotel.location }}</td>#}
+{#                <td>{{ hotel.image }}</td>#}
+{#                <td>#}
+{#                    <a href="{{ path('hotel_show', {'id': hotel.id}) }}">show</a>#}
+{#                    <a href="{{ path('hotel_edit', {'id': hotel.id}) }}">edit</a>#}
+{#                </td>#}
+{#            </tr>#}
+{#        {% else %}#}
+{#            <tr>#}
+{#                <td colspan="6">no records found</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+
+{#    <a href="{{ path('hotel_new') }}">Create new</a>#}
+{#{% endblock %}#}
+{% extends 'admindash.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+    {% block tbody %}
+        {% block breadcrumb1  %}<a href="{{ path('hotel_new') }}">Create new</a>{% endblock %}
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Image</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for hotel in hotels %}
+                    <tr>
+                        <td>{{ hotel.id }}</td>
+                        <td>{{ hotel.nom }}</td>
+                        <td>{{ hotel.description }}</td>
+                        <td>{{ hotel.location }}</td>
+                        <td>{{ hotel.image }}</td>
+                        <td>
+                            <a href="{{ path('hotel_show', {'id': hotel.id}) }}">show</a>
+                            <a href="{{ path('hotel_edit', {'id': hotel.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">no records found</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    {% endblock %}
+
+{% endblock %}

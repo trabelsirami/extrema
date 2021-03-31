@@ -1,0 +1,47 @@
+{% extends 'admindash.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block body %}
+    <h1>Produit index</h1>
+
+    {% block tbody %}
+        {% block breadcrumb1  %}<a href="{{ path('produit_new') }}">Create new</a>{% endblock %}
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Url</th>
+                    <th>Image</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for produit in produits %}
+                    <tr>
+                        <td>{{ produit.id }}</td>
+                        <td>{{ produit.nom }}</td>
+                        <td>{{ produit.url }}</td>
+                        <td>{{ produit.image }}</td>
+                        <td>
+                            <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
+                            <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">no records found</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    {% endblock %}
+
+    <a href="{{ path('produit_new') }}">Create new</a>
+{% endblock %}

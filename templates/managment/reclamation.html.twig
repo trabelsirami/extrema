@@ -1,0 +1,13 @@
+{% extends 'index.html.twig' %}
+{% block tbody %}
+
+    <div class="container">
+    <div class="row">
+        {% for reclamation in reclamations %}
+
+        <div class="card" style="width:300px">
+            <img class="card-img-top" src="/uploads/images/{{reclamation.description}}" alt="Card image" style="width:100%">
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

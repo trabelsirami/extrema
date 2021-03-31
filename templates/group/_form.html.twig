@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+<div class="form-group">
+    {{ form_row(form.nom, {'attr': {'class': 'form-control','id':"exampleInputUsername1"}}) }}
+</div>
+<div class="form-group">
+
+    {{ form_row(form.description, {'attr': {'class': 'form-control','id':"exampleInputUsername1"}}) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.lieu, {'attr': {'class': 'form-control ','id':"exampleInputUsername1"}}) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.date_group, {'attr': {'class': 'form-control ','id':"exampleInputUsername1"}}) }}
+</div>
+
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

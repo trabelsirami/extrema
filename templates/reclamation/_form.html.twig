@@ -1,0 +1,8 @@
+{{ form_start(form) }}
+
+<div class="form-group">
+    {{ form_row(form.categorierec, {'attr': {'class': 'form-control','id':"exampleInputUsername1"}}) }}
+    {{ form_row(form.description, {'attr': {'class': 'form-control','id':"exampleInputUsername1"}}) }}
+</div>
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
